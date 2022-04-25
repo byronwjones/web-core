@@ -1,4 +1,5 @@
-﻿using BWJ.Web.Core.Attributes;
+﻿using BWJ.Web.Core.ApiRequests;
+using BWJ.Web.Core.Attributes;
 using BWJ.Web.Core.Sentinels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -42,6 +43,21 @@ namespace BWJ.Web.Core
             }
 
             return collection;
+        }
+        public static IServiceCollection RegisterApiHandlers(this IServiceCollection services)
+        {
+            services.AddScoped<IApiHandlerMediator, ApiHandlerMediator>();
+
+            var handlers = typeof(ServiceCollectionExtensions)
+                .Assembly.GetExportedTypes()
+                .Where(t => t.IsSubclassOfGenericClassDefinition(typeof(ApiHandler<,>)));
+
+            foreach (var handler in handlers)
+            {
+                services.AddScoped(handler.BaseType, handler);
+            }
+
+            return services;
         }
 
         private static void RegisterServicesByNamespace(
