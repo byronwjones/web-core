@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Core objects and utilities for web projects</Description>
     <Copyright>(c) 2021 Byron W Jones. All rights reserved.</Copyright>
