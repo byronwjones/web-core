@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BWJ.Web.Core
+namespace BWJ.Web.Core.Utils
 {
     public static class TypeExtensions
     {

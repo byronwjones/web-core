@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BWJ.Web.Core.Utils;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
